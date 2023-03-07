@@ -33,9 +33,6 @@ app.get('/:filepath' , async (req , res) => {
 
 app.get('/img/:tokenId' , (req , res) => {
     let tokenId = req.params.tokenId;
-    if (tokenId > 1234 || tokenId < 0) {
-        res.send("Not a valid token Id")
-    }
     if (imageRendered[tokenId] == undefined) {
         res.sendFile(`69420.png`, { root: path.join('.', 'views') });
     } else {
