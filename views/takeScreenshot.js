@@ -19,7 +19,7 @@ async function takeScreenshot(tokenId) {
 
   // Take a screenshot of the page
   await page.screenshot({ path: `${tokenId}_uncropped.png` });
-  await new Promise(resolve => setTimeout(resolve, 1500));
+  await new Promise(resolve => setTimeout(resolve, 5000));
   await cropImage(`${tokenId}_uncropped.png` , `${tokenId}.png` , 0, 0, 500, 500);
  
   // Close the browser
