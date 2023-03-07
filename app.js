@@ -18,7 +18,7 @@ app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.get('/:filepath' , async (req , res) => {
     let filepath = req.params.filepath;
-    if (filepath > 1234 || filepath < 0 || (isNaN(filepath)) ) {
+    if (filepath > 1234 || filepath < 0 || (isNaN(filepath) && filepath.includes('temp') == false) ) {
         res.send("Not a valid token Id")
     }
     const minted = await checkMinted(filepath);
